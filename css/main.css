@@ -1,0 +1,284 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Marvel&family=Maven+Pro:wght@400;600&family=Noto+Sans+KR:wght@300;700&family=Unna:ital,wght@0,400;0,700;1,400&display=swap');
+/* reset */
+* {margin: 0;padding: 0;}
+a { text-decoration: inherit; color: inherit;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a img {border: none;}
+li {list-style: none;}
+img {vertical-align: middle;}
+address, em, i {font-style: normal;}
+a:focus {outline: none;}
+button:focus {outline: none;}
+/* layout */
+body{font-family: 'Noto Sans KR', sans-serif;font-size: 14px; line-height: 1.4;
+box-sizing: border-box;}
+.wrap{width: 100%; margin: 0 auto; overflow: hidden;}
+.en{font-family: 'Unna', serif;}
+.en_1{font-family: 'Maven Pro', sans-serif;}
+.menuWrap{width: 100%; height: 100vh; position: fixed; left: 0; top: 0; z-index: 100; background-color: #fff; color: #000; padding: 160px 200px 0 450px; box-sizing: border-box; overflow: hidden;}
+.menuWrap .close{display: inline-block; position: absolute; top: 5px;left: 40px; font-size: 16px;}
+.menuWrap .close img{margin-right: 25px;}
+.menuWrap_left{float: left; width: 50%;}
+.menuWrap_left .tit{margin-bottom: 50px;}
+.menuWrap_left .tit li{}
+.menuWrap_left .tit li a{font-size: 44px; line-height: 1.5;}
+.menuWrap_left .tit li a span{}
+.menuWrap_right{float: right; width: 50%;}
+.menuWrap_right .fam_site{font-size: 18px; line-height: 1.7; margin-bottom: 100px;}
+.menuWrap_right .fam_site li:nth-child(1){font-size: 15px; margin-bottom: 23px;}
+.menuWrap .follow p{font-size: 15px; line-height: 1;}
+.menuWrap .follow a{display: inline-block; margin-right: 25px;}
+
+/* text animation */
+.menuWrap.on span{overflow: hidden;}
+.menuWrap.on b{overflow: hidden; display: block; animation-name: textAni; animation-duration: 1.4s; font-weight: normal;}
+/* animation */
+@keyframes textAni{ /*100퍼센트는 생략한다(위에 있으니) opacity0-0-1 트랜슬레잇y 100px-0  아래에서 위로 */
+    0%{opacity: 0;}
+    40%{opacity: 0; transform: translateY(100px);}
+}
+/* 메인메뉴 타이밍 조절 */
+.menuWrap.on .tit li:nth-child(2) span b{animation-duration: 1.5s;}
+.menuWrap.on .tit li:nth-child(3) span b{animation-duration: 1.6s;}
+.menuWrap.on .tit li:nth-child(4) span b{animation-duration: 1.7s;}
+.menuWrap.on .tit li:nth-child(5) span b{animation-duration: 1.8s;}
+.menuWrap.on .tit li:nth-child(6) span b{animation-duration: 1.9s;}
+/* 메인메뉴 on 설정*/
+.menuWrap{width: 0; transition: 0s; overflow: hidden; opacity: 0; padding: 0;}
+.menuWrap.on{width: 100%; transition: 0.5s; opacity: 1; padding: 160px 200px 0 450px;}
+
+/* header */
+header{width: 100%; padding: 0 40px; box-sizing: border-box; height: 100px; line-height: 100px; color: #fff; z-index: 100; position: fixed; top: 0;left: 0;transition: all 0.5s;}
+header .menuOpen{display: inline-block; position: absolute; top: 50%; transform: translateY(-50%); width: 40px;height: 16px; line-height: 100px;}
+header .menuOpen span{display: block; width: 100%; height: 1px; background-color: #fff; position: absolute;
+top: 0; left: 0;}
+header .menuOpen .mid{ top: 50%;}
+header .menuOpen .bot{ top: 100%;}
+.book{display: inline-block; float:left; margin-left: 70px; height: 100%; font-size: 25px;}
+.langs{float: left; margin-left: 220px; overflow: hidden; width: 150px;}
+.langs li{float: left; width: 50%;}
+.langs li:first-child{font-weight: bold;}
+.langs li:last-child{color: #ddd;}
+.langs li a { display: block; padding: 0 30px; text-transform: uppercase;}
+header .right{ float: right;}
+header .right li{ float: left; margin-right:55px;}
+header .right li:nth-child(2){margin-right: 0;}
+header .right li p{letter-spacing: 1px;}
+header .right li .logo{width: 150px; height: 100px;}
+header .right li .logo a{display: block; width: 100%;height: 100%; position: relative;}
+header .right li .logo a img{position: absolute;top: 50%; left: 0; transform: translateY(-50%);width: 100%;}
+header .right li .logo a img:nth-child(2){opacity: 0;}
+header.on{background: rgba(96,77,62,0.3);}
+/*visual*/
+.visual {color:#fff;}
+.visual .slide li {position: relative; width: 100%; height: 100vh;}
+.visual .slide li img{position: absolute; right: 0; top:0; width: 100%;}
+/*visual .mainText*/
+.visual .slide .mainText {position: absolute; top:35%; right: 18%; width: 25%;}
+.visual .slide .mainText strong {display: block; font-size: 50px; margin-bottom: 30px;font-weight: 500; letter-spacing: 2px; opacity: 1;}
+.visual .slide .mainText > p {font-size: 20px; font-weight: normal;line-height: 1.8;margin-bottom: 70px;}
+.visual .slide .mainText .num {position: relative; font-size: 30px; font-weight: bold; margin-bottom: 30px;}
+.visual .slide .mainText .num span {position: absolute; top:-10px; display: inline-block; padding: 10px 4px; opacity: 0;}
+.visual .slide .mainText .message {font-size: 26px; line-height: 1.2;}
+
+/*비주얼 공통 하단 메뉴*/
+.visual .menu {position:absolute; left: 4%; bottom: 7%; font-size: 21px;padding-bottom: 7px;overflow: hidden; }
+.visual .menu:after {content: ''; width: 100%; height: 4px; background: #fff; position: absolute; left:0; bottom: 0; animation: bar 4.5s infinite;}
+@keyframes bar {
+    0%{width: 0%;}
+}
+
+.visual .menu li {float: left; padding-right: 20px;}
+.visual .menu li:nth-child(2){padding-right: 130px;}
+.visual .menu li:nth-child(3){padding-right: 0;}
+.visual .menu li span i {display: inline-block; margin-right: 10px; font-size: 18px;}
+.visual .menu li:nth-child(2) span i {margin-right: 22px;}
+.visual .menu li p {font-size: 28px;}
+
+/*animation*/
+@keyframes trans {
+    0% {opacity: 0; transform: translateY(15px);}
+    30% {opacity: 1; transform: translateY(0);}
+    70% {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY(-15px);}
+}
+.visual .slide .slick-active .mainText .num span {animation-name: trans; animation-duration: 4.5s;}
+
+@keyframes opa {
+    0%{opacity: 0;}
+}
+.visual .slide .slick-active .mainText strong {animation-name:opa; animation-duration: 3s;}
+
+@keyframes  slide-up {
+    0%{opacity: 0;}
+    20%{opacity: 0; transform: translateY(10px);}
+}
+.visual .slide .slick-active .mainText > p {animation-name: slide-up; animation-duration: 1.5s;}
+
+@keyframes scaleani {
+    0%{transform: scale(1.1);}
+} 
+.visual .slide .slick-active li img{animation-name: scaleani; animation-duration: 4.5s;}
+
+/* introduce */
+.introduce{width: 88%; margin: 130px auto;}
+.introduce .title{font-size: 32px;line-height: 1.6; margin-bottom:100px;}
+.introduce .roomInfo{width: 100%; height: 884px; position: relative;}
+.introduce .roomInfo .tab{width: 380px; text-transform: uppercase; ; margin-bottom: 40px; overflow: hidden;}
+.introduce .roomInfo .tab li{float: left; width: 40%; margin-right: 3%;}
+.introduce .roomInfo .tab li:nth-child(2){margin-right: 0;}
+.introduce .roomInfo .tab li a{display: block; width: 100%;height: 100%; font-size: 16px;}
+.introduce .roomInfo .tab li.on{color: #a68164;}
+
+/* tab */
+.introduce .roomInfo .tab li a span{display: inline-block; position:relative; padding: 5px 0;}
+.introduce .roomInfo .tab li a span:after{position:absolute; content: ""; left: 0;bottom: 0; width: 0; height: 1px; background-color: #a68164; transition: all 0.5s;}
+.introduce .roomInfo .tab li a span:hover:after{width: 100%;}
+/* tabbox */
+.introduce .roomInfo .tabBox {width: 100%; position: absolute;left: 0;top: 11%;display: none;}
+.introduce .roomInfo .tabBox.on{display: block;}
+.introduce .roomInfo .tabBox .deluxe{overflow: hidden; width: 100%;}
+.introduce .roomInfo .tabBox .deluxe .photo{float: left; width: 60%; position: relative;}
+.introduce .roomInfo .tabBox .deluxe .photo img{width: 100%;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo{float: right; width: 40%; text-align: center; margin-top: 180px;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .titleBox{margin-bottom: 120px;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .titleBox h3{font-size: 35px;font-weight: ls; margin-bottom: 30px;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .titleBox p{ font-size: 17px;color: #604d3e;}
+.introduce .roomInfo .tabBox .deluxe .photo .showBox{position: absolute; width: 25%; left: 8%; bottom: 18%; color: #fff;letter-spacing: 1.5px;}
+.introduce .roomInfo .tabBox .deluxe .showBox .name{padding-bottom: 15px; border-bottom: 1px solid rgba(235,235,235,0,33); position: relative; margin-bottom: 10px;}
+.introduce .roomInfo .tabBox .deluxe .showBox .name:after{content: "";width:100%; height: 1px;background-color: #fff; position: absolute; left: 0;bottom: 0; animation: bar 4.4s both;}
+.introduce .roomInfo .tabBox .deluxe .showBox .btn{letter-spacing: 1px;margin-bottom: 10px;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail li{margin-bottom: 50px;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail li span{display: block; margin-bottom: 20px;color: #a68164}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail li p{font-size: 17px;}
+/* introduce .motion*/
+/* scrolla.js 삽입, html 해당 부분에 animate/ deta--animate="종류"삽입, css에서는 .motion붙었을떄의 애니메이션을 만들기, js가서 스크롤라 설정*/
+.introduce .title.motion{animation-name: slide-up2; animation-duration: 1.5s}
+.introduce .roomInfo.motion{animation-name: slide-up2; animation-duration: 1.4s}
+.introduce .roomInfo.motion  .tabBox .deluxe .photo .showBox .name  {animation-name: slide-up2; animation-duration: 2s;}
+.introduce .roomInfo.motion  .tabBox .deluxe .txtinfo .titleBox h3{animation-name: slide-up2; animation-duration: 1.4s}
+.introduce .roomInfo.motion  .tabBox .deluxe .txtinfo .tittleBox p{animation-name: slide-up2; animation-duration: 1.6s}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail li{animation-name: slide-up2; animation-duration: 2s; animation-delay: 0.2s;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail:nth-child(2){animation-name: slide-up2; animation-duration: 2s; animation-delay: 0.3s;}
+.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail:nth-child(3){animation-name: slide-up2; animation-duration: 2s; animation-delay: 0.4s;}
+@keyframes slide-up2{ /*위에 css 셋팅은 마지막 모습 즉 100%상태(오파시티1, 트랜슬레이y 0)이니까 굳이 애니메이션에 100%안써도 된다*/
+  0%{opacity: 0;}
+  20%{opacity: 0; transform: translateY(40px);}
+}
+/* offer */
+.offer{ width: 87%; margin: 200px auto 100px;}
+.offer h2{font-size: 30px;line-height: 1.7;font-weight: 500;margin-top: 15px;}
+.offer .findBtn{display: block;font-size: 15px; color: #a68164;margin-bottom: 35px;}
+.offer .new{width: 100%;overflow: hidden; margin-top: 100px;}
+.offer .new li{float: left; width: 23.5%;margin-right: 2%;}
+.offer .new li:last-child{margin-right: 0;}
+.offer .new li p.img{width: 100%;margin-bottom: 35px; overflow: hidden;}
+.offer .new li p.img a{display: block;width: 100%;height: 100%;}
+.offer .new li p.img a img{width: 100%; transition: 0.5s;}
+.offer .new li p.img a:hover img{transform: scale(1.1);}
+.offer .new li span{display: block; margin-bottom: 6px;}
+.offer .new li h3{font-size: 20px;letter-spacing: -1px; font-weight: 500;margin-bottom: 15px;}
+.offer .new li .hashTag{font-size: 15px;letter-spacing:-1px; color: #a68164; height: 100px;} /*버튼 높이가 달라서 높이줘봄*/
+.offer .new li > a{display: inline-block; font-size: 15px; color: #a68164; position: relative;padding: 5px 0;}
+.offer .new li > a:after {content: ''; width: 0; height: 1px; position: absolute; left: 0; bottom: 0; background:#a68164; transition: all 0.5s; }
+.offer .new li > a:hover:after {width: 100%;}
+/* animation */
+.offer .new li.motion:first-child{ animation-name: slide-up2; animation-duration: 1.2s}
+.offer .new li.motion:nth-child(2){ animation-name: slide-up2; animation-duration: 1.4s}
+.offer .new li.motion:nth-child(3){ animation-name: slide-up2; animation-duration: 1.6s}
+.offer .new li.motion:nth-child(4){ animation-name: slide-up2; animation-duration: 1.8s}
+/* intro-dining */
+.intro-dining{width: 100%; overflow: hidden; background-color: #d7cdc5; height: 900px;}
+.slide2{float: left; width: 50%;}
+.intro_diningTxt{ float: left; width: 50%; padding: 80px 80px 0 80px; box-sizing: border-box;
+}
+.intro-dining .slide2 li{width: 100%; position: relative; }
+.intro-dining .slide2 li img{width: 100%;}
+.intro-dining .slide2 li .slide_txt{position: absolute; left: 8%; bottom: 20%; color: #fff; }
+.intro-dining .slide2 li .slide_txt h3{font-weight: normal;font-size: 35px; letter-spacing: 3px;margin-bottom: 20px;} 
+.intro-dining .slide2 li .slide_txt p{margin-bottom: 45px;}
+.intro-dining .slide_txt a{display: block; width: 150px; background-color: #a68164; padding: 12px 20px; text-align: center; position: relative; z-index: 1;}
+.intro-dining .slide_txt a:after{ content: ""; position: absolute; width: 100%; height: 0; position: absolute; left: 0;
+top: 0; background-color: #604a3e; z-index: -1;}
+.intro-dining .slide_txt a:hover:after{height: 100%;transition: height 0.5s ease;}
+.intro-dining .intro_diningTxt h3{font-size: 25px; font-weight: 500; line-height: 1.7; margin-bottom: 520px;}
+.intro-dining .intro_diningTxt p{font-size: 14px; color: #a68164; line-height: 1.7;}
+/* intro-dining .slick-active*/
+.intro-dining .slide2 .slick-active .slide_txt h3{animation-name: slide-up2; animation-duration: 0.6s;}
+.intro-dining .slide2 .slick-active .slide_txt p{animation-name: slide-up2; animation-duration: 0.7s;}
+.intro-dining .slide2 .slick-current .slide_txt a{animation-name: slide-up2; animation-duration: 1.2s;}
+.intro-dining .intro_diningTxt.motion h3{animation-name: slide-up2; animation-duration: 2s;}
+.intro-dining .intro_diningTxt.motion .bottomTxt{animation-name: slide-up2; animation-duration: 2.5s;}
+/* slick slide가  돌아갈떄마다 나오는 애니메이션은 클래스에 슬릭액티브가 붙는데 그클래스를 해당 클래스에 붙인다 */
+/* 스크롤에 반응하는 scrolla.js는 html각 클래스에 animate, data-animate: motion을 붙이고 css에서 각클래스에 .motion붙인다 */
+
+/* greetings */
+.greetings{width: 100%;text-align: center; margin: 100px 0 100px;}
+.greetings h2{font-size: 17px;font-weight: normal; color: #a68164; margin-bottom: 60px;}
+.greetings h3{font-size: 32px; line-height: 1.6; font-weight: 500; margin-bottom: 50px;}
+.greetingIntro{}
+.greetings a{ display: block; width: 150px; margin: auto; text-align: center; border: 1px solid #a68164; padding: 12px 20px;
+position: relative;}
+.greetings a:after{ content: ""; position: absolute; width: 100%; height: 0; position: absolute; left: 0;
+    top: 0; background-color: #a68164b6; z-index: -1; transition: height 0.5s ease;}
+.greetings a:hover:after{height: 100%;}
+
+
+/* news_notice */
+.news_notice{width: 100%; border-top: 1px solid #d3cdb7; overflow: hidden;}
+.title_wrap{width: 7%; height: 395px; float: left; border-right:1px solid #d3cdb7; box-sizing: border-box; position: relative;}
+.title_wrap .inner{font-size: 20px; text-align: center;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.title_wrap .inner .new_title{transform: rotate(-90deg); width: 200px;}
+.title_wrap .inner a{display: block; color: #604d3e;}
+.notice_list{width: 90%; float: left; padding-top: 98px; overflow: hidden; }
+.notice_list.motion li{animation-name:slide-up2; animation-duration: 1s;}
+.notice_list.motion li:nth-child(2){animation-duration: 1.2s;}
+.notice_list.motion li:nth-child(3){animation-duration: 1.4s;}
+.notice_list ul{}
+.notice_list ul li{float: left; width: 33.3333%;padding-right: 50px; box-sizing: border-box; }
+.notice_list .data{display: block; text-align: right; font-size: 38px;} /*span요소를 박스안에 오른쪽, 중앙, 왼쪽에 보내는게 왜자꾸 앱솔루트하려고해? 블락시켜서text-align*/
+.notice_list .textBox{width: 80%;float: right;}
+.notice_list .textBox strong{display: block; font-size: 20px; font-weight: 500; color: #1d212a; margin-bottom: 50px;}
+.notice_list .textBox .list-txt{ font-size: 14px; color: #604d3e; height: 115px;}
+.notice_list .textBox a.more{display: block; width: 80px; font-size: 15px; position: relative; padding: 5px 0; margin-bottom: 50px;} /*width가 가상태그(선)의 총길이가 된다. */
+.notice_list .textBox a.more:after{ content: ""; position: absolute; left: 0;bottom: 0; width: 0; height: 1px; background-color:#604d3e ; transition: 0.5s;} /* 선은 백그라운드 컬러다. 100%될때 길이는 a에 주는거고 가상태그에 주는게 아니다. 가상에는 with:0 */
+.notice_list .textBox a.more:hover:after{width: 100%;}
+/* club-banner*/
+.club-banner{background: url(../images/club.jpg)no-repeat center/cover; width: 100%;}
+.club-banner .inner{width: 87%; margin:auto; padding: 200px 0;color: #fff; text-align: center;}
+.club-banner .inner h3{font-size: 38px; font-weight: 500; margin-bottom: 50px;}
+.club-banner .inner a.more { width: 88px; padding: 5px 0; position: relative; font-size: 15px;}
+.club-banner .inner a.more:after{content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background-color: #a68164; transition: all 0.5s;}
+.club-banner .inner a.more:hover:after{ width: 100%;}
+
+/* footer */
+footer{width: 100%; background-color: #161e27;}
+.foot_inner{width: 87%; margin: auto; padding: 80px 0;color: #fff; overflow: hidden;position: relative;}
+.foot_inner .logo{width: 16%; float: left;}
+.foot_inner .logo img{ filter: invert(100%) sepia(2%) saturate(367%) hue-rotate(202deg) brightness(117%) contrast(100%);width: 45%;}
+.foot_inner ul.contact_area {width: 68%; float: left;}
+.foot_inner ul.contact_area li{width: 18%; float: left;}
+.foot_inner ul.contact_area li p{margin-bottom: 5px;}
+.foot_inner ul.contact_area li p a{font-size: 14px;}
+.foot_inner .contact_area li:nth-child(1){width: 34%;}
+.foot_inner .contact_area li:nth-child(3){width: 24%;}
+.foot_inner .contact_area .address{font-size: 18px;}
+.foot_inner .contact_area .mail{ }
+.foot_inner .contact_area .tel{}
+.foot_inner .contact_area .tel span, .mail span {margin-right: 10px;}
+.foot_inner .footer_right{ width: 16%; float: right; overflow: hidden;}
+.foot_inner .footer_right .icon{font-size: 14px;}
+.foot_inner .footer_right .icon li {float: right; font-size: 22px; padding-left: 40px; box-sizing: border-box;}
+.foot_inner .footer_right .icon li img{width: 70%;}
+.foot_inner .footer_right .fam_site_wrap{ position: absolute; width: 170px; right: 0; bottom: 30px; font-size: 13px;}
+.foot_inner .footer_right .icon li:last-child{padding-left: 0;}
+.foot_inner .footer_right .fam_site_wrap .txt_wrap{width: 100%; height: 33px; margin-bottom: 10px;}
+.foot_inner .footer_right .fam_site_wrap .btn_fam{ width: 100%; display: block; border: 1px solid rgba(255,255,255,0.1); background-color: #161e27; padding: 5px 15px; color: #fff; text-align: left; cursor: pointer; margin-bottom: 20px;}
+.foot_inner .footer_right .fam_site_wrap .btn_fam span.fma_sit_tit{margin-right: 10px;}
+.foot_inner .footer_right .fam_site_wrap .btn_fam i{margin-left: 50px;}
+.foot_inner .footer_right .fam_site_wrap .copy{font-size: 11px; color: #888;}
+.foot_inner .footer_right .fam_site_wrap .item_wrap{width: 100%; height: 156px; padding: 18px 20px 16px; box-sizing:border-box; position: absolute; left: 0;bottom: 58px; background-color: #fff;line-height: 2.5em; overflow: scroll;display: none;}
+.foot_inner .footer_right .fam_site_wrap .item_wrap a{display: block; width: 100%; padding: 6px; box-sizing: border-box; transition: 0.4 ease; color: #1d212a; }
+
+
